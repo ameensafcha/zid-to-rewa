@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zid Order Reader - Settings</title>
+<style>
+  *{box-sizing:border-box}
+  html{scrollbar-width:thin;scrollbar-color:#c3c7c3 transparent}
+  body{margin:0;background:#f4f5f4;color:#1f2937;font:14px/1.5 system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif}
+  header{position:sticky;top:0;z-index:2;display:flex;align-items:center;gap:12px;padding:14px 24px;background:#14532d;color:#fff}
+  header h1{flex:1;margin:0;font-size:18px}
+  .saved{font-size:12px;opacity:0;transition:opacity .2s}
+  .saved.on{opacity:1}
+  main{max-width:880px;margin:0 auto;padding:20px 16px 60px}
+  p.lead{margin:0 0 16px;color:#4b5563}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+  .card{overflow:hidden;border:1px solid #e5e7eb;border-radius:12px;background:#fff}
+  .card h2{display:flex;align-items:center;gap:8px;margin:0;padding:10px 14px;border-bottom:1px solid #eef0ee;background:#fafbfa;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:#4b5563}
+  .card h2 button{margin-left:auto;border:0;background:none;color:#14532d;font-size:11px;cursor:pointer;text-transform:none;letter-spacing:0}
+  label{display:flex;align-items:center;gap:10px;padding:8px 14px;border-top:1px solid #f2f3f2;cursor:pointer}
+  .card h2 + label{border-top:0}
+  label:hover{background:#f7faf8}
+  input[type=checkbox]{width:16px;height:16px;accent-color:#14532d}
+  .sec{margin:26px 0 10px;font-size:15px}
+  .q{width:100%;margin-bottom:10px;padding:10px 12px;border:1px solid #d1d5db;border-radius:10px;font:inherit}
+  .extra{max-height:520px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#c3c7c3 transparent}
+  .extra label span.p{margin-left:auto;color:#9ca3af;font:11px ui-monospace,monospace}
+  .hint{margin:0;padding:10px 14px 4px;color:#4b5563;font-size:13px}
+  input[type=radio]{width:16px;height:16px;accent-color:#14532d}
+  .empty{padding:14px;color:#6b7280}
+  .bar{display:flex;gap:10px;margin-top:20px}
+  .btn2{padding:9px 14px;border:1px solid #d1d5db;border-radius:10px;background:#fff;cursor:pointer}
+</style>
+</head>
+<body>
+<header><h1>Zid Order Reader - Settings</h1><span class="saved" id="saved">Saved ✓</span></header>
+<main>
+  <p class="lead">Tick the fields the order window should show. Every shown field gets its own Copy button. Changes save by themselves.</p>
+  <div class="grid" id="main"></div>
+
+  <h2 class="sec">More fields from Zid</h2>
+  <p class="lead">Every other field Zid sends. This list fills after you open one order with "Read order".</p>
+  <input class="q" id="q" type="search" placeholder="Search (e.g. district, tax, weight, tracking)">
+  <div class="card extra" id="extra"></div>
+
+  <div class="bar"><button class="btn2" id="reset" type="button">Reset to default fields</button>
+    <button class="btn2" id="fmt" type="button" title="For fixing the reader: the shape of the order in the side panel, customer data hidden">Copy data format</button>
+    <span id="fmtmsg" class="saved on" style="color:#14532d"></span></div>
+</main>
+<script src="fields.js"></script>
+<script src="options.js"></script>
+</body>
+</html>

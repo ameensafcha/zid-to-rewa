@@ -1,0 +1,26 @@
+#zor-btn{position:fixed;left:16px;bottom:90px;z-index:2147483646;padding:10px 14px;border:0;border-radius:10px;background:#1f7a4d;color:#fff;font:600 14px/1.2 system-ui,sans-serif;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.2)}
+#zor-btn.zor-wait{background:#8a6d1a}
+#zor-panel{position:fixed;left:16px;bottom:140px;z-index:2147483647;width:min(560px,calc(100vw - 32px));max-height:70vh;overflow:auto;padding:14px;border-radius:12px;background:#fff;color:#1d1d1d;font:13px/1.45 system-ui,sans-serif;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+#zor-panel .zor-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-size:15px}
+#zor-panel .zor-x{border:0;background:#eee;border-radius:6px;padding:2px 8px;cursor:pointer}
+#zor-panel .zor-status{padding:8px 10px;border-radius:8px;font-weight:700;margin-bottom:6px}
+#zor-panel .zor-ok{background:#e3f4ea;color:#14633b}
+#zor-panel .zor-bad{background:#fde5e3;color:#a11d12}
+#zor-panel .zor-err{margin:4px 0;color:#a11d12}
+#zor-panel .zor-warn{margin:4px 0;color:#8a5a00}
+#zor-panel table{width:100%;border-collapse:collapse;margin:8px 0}
+#zor-panel th,#zor-panel td{border-bottom:1px solid #eee;padding:5px 4px;text-align:start;vertical-align:top}
+#zor-panel td.n{text-align:end;white-space:nowrap}
+#zor-panel p{margin:4px 0}
+#zor-copy{margin-top:8px;padding:9px 14px;border:0;border-radius:8px;background:#1f7a4d;color:#fff;font-weight:600;cursor:pointer}
+#zor-copy:disabled{background:#bbb;cursor:not-allowed}
+#zor-msg{margin-inline-start:10px}
+#zor-panel .zor-dbg{font:11px/1.4 ui-monospace,monospace;color:#555;word-break:break-all}
+#zor-panel th{font-weight:600;color:#555;width:110px}
+#zor-panel tr.zor-sec th{padding-top:10px;color:#1d1d1d;font-size:13px;border-bottom:2px solid #ddd;width:auto}
+#zor-panel .zor-c{padding:2px 8px;border:1px solid #1f7a4d;border-radius:6px;background:#fff;color:#1f7a4d;font-size:11px;cursor:pointer}
+#zor-panel .zor-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:8px}
+#zor-panel .zor-sub{padding:9px 12px;border:1px solid #999;border-radius:8px;background:#fff;color:#333;cursor:pointer}
+#zor-panel .zor-all{margin:8px 0;border:1px solid #ddd;border-radius:8px;padding:6px 8px}
+#zor-panel .zor-all summary{cursor:pointer;font-weight:700}
+#zor-panel td{word-break:break-word}

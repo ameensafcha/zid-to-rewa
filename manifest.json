@@ -1,0 +1,71 @@
+{
+  "manifest_version": 3,
+  "name": "Zid Order Reader (for Rewaa)",
+  "version": "0.6.0",
+  "description": "Reads the order you have open in the Zid dashboard, checks the numbers, and fills it into the Rewaa sell screen (stops at Pay). Nothing is sent anywhere.",
+  "permissions": [
+    "storage",
+    "clipboardWrite",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "https://dashboard.zid.sa/*",
+    "https://web.zid.sa/*",
+    "https://platform.rewaatech.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://dashboard.zid.sa/*",
+        "https://web.zid.sa/*"
+      ],
+      "js": [
+        "hook.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://dashboard.zid.sa/*",
+        "https://web.zid.sa/*"
+      ],
+      "js": [
+        "extract.js",
+        "content.js"
+      ],
+      "css": [
+        "panel.css"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://platform.rewaatech.com/*"
+      ],
+      "js": [
+        "extract.js",
+        "rewaa.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Zid order panel"
+  },
+  "side_panel": {
+    "default_path": "panel.html"
+  },
+  "commands": {
+    "toggle-panel": {
+      "suggested_key": {
+        "default": "Alt+Shift+Z"
+      },
+      "description": "Collapse / expand the Zid order panel"
+    }
+  }
+}
